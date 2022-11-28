@@ -7,12 +7,11 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 import MarvelService from '../../services/MarvelService';
 
 class RandomChar extends Component {
-    // так как нужно вызвать метод updateChar сразу при загрузке страницы, засунем его в конструктор
-    // !!! вызов методов в конструкторе (особенно, которые общаются с сервером и тп) плохая практика
-    constructor(props) {
-        super(props)
-        this.updateChar()
-    }
+    // // так как нужно вызвать метод updateChar сразу при загрузке страницы, засунем его в конструктор
+    // // !!! вызов методов в конструкторе (особенно, которые общаются с сервером и тп) плохая практика
+    // constructor(props) {
+    //     super(props)
+    // }
     
     state = {
         char: {},
@@ -21,6 +20,15 @@ class RandomChar extends Component {
     }
 
     marvelService = new MarvelService()
+
+    componentDidMount() {
+        this.updateChar()
+        this.timerId = setInterval(this.updateChar, 3000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerId)
+    }
 
     onCharLoaded = (char) => {
         this.setState({
