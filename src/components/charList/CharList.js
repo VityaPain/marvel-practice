@@ -1,5 +1,6 @@
 import './charList.scss';
 import abyss from '../../resources/img/abyss.jpg';
+import MarvelService from '../../services/MarvelService'
 
 const CharList = () => {
     return (
