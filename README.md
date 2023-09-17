@@ -11,7 +11,7 @@ This project was created with the goal of learning React (functional components)
 
 ### Examples inteface
 **`Charlist`**
-
+![CharList](https://github.com/VityaPain/marvel-ractice/blob/main/assets/charList.PNG)
 
 ### `yarn test`
 
