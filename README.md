@@ -1,18 +1,17 @@
-# Getting Started with Create React App
+# Learning React with Marvel API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with the goal of learning React (functional components) and methods of working with API.
 
-## Available Scripts
+## What has been implemented
 
-In the project directory, you can run:
+- Functional components
+- Routing
+- Integration with the Marvel API
+- Requests to the server
 
-### `yarn start`
+### Examples inteface
+**`Charlist`**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `yarn test`
 
