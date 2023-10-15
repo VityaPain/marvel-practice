@@ -36,11 +36,15 @@ const useMarvelService = () => {
 	};
 
 	const searchChar = async (charName) => {
-		console.log('CHAR-NAME: ' + charName)
-		// const res = await request(`${_apiBase}characters?name=${charName}&${_apiKey}`)
-		const res = await request(`https://gateway.marvel.com:443/v1/public/characters?name=Spider-Man&${_apiKey}`)
-		console.log(res)
-		return _transformCharacter(res.data.results[0]).id;
+		const res = await request(`${_apiBase}characters?name=${charName}&${_apiKey}`)
+
+		if (res.data.results.length == 0) {
+			return {id: null, name: null}
+		}
+
+		const {id, name} = _transformCharacter(res.data.results[0])
+
+		return {id, name}
 	}
 
 	const _transformCharacter = (char) => {
